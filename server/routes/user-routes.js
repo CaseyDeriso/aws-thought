@@ -54,7 +54,7 @@ router.get("/users/:username", (req, res) => {
   });
 });
 ////////////////////////////////
-/// /api/users POST new user ///
+/// /api/users POST new thought ///
 router.post("/users", (req, res) => {
   const params = {
     TableName: table,
