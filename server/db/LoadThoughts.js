@@ -4,7 +4,6 @@ const fs = require("fs");
 // aws config
 AWS.config.update({
   region: "us-east-2",
-  endpoint: "http://localhost:8000",
 });
 // dynamo config, this time using DynamoDB.DocumentClient class
 const dynamodb = new AWS.DynamoDB.DocumentClient({ apiVersion: "2012-08-10" });
