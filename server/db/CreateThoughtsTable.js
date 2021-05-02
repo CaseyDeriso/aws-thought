@@ -3,7 +3,6 @@ const AWS = require("aws-sdk");
 // modify AWS config object for DynamoDB to use to connect to local instance
 AWS.config.update({
   region: "us-east-2",
-  endpoint: "http://localhost:8000",
 });
 
 // create DynamoDB service interface object w/ DynamoDB class.

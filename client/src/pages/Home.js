@@ -20,7 +20,7 @@ const Home = () => {
         setThoughts([...data]);
         setIsLoaded(true);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     fetchData();
