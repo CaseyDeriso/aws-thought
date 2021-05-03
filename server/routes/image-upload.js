@@ -1,8 +1,8 @@
 const express = require("express");
-const routes = express.Router();
+const router = express.Router();
 const multer = require("multer");
 const AWS = require("aws-sdk");
-const router = require("./user-routes");
+const paramsConfig = require("../utils/params-config");
 
 const storage = multer.memoryStorage({
   desination: function (req, file, callback) {
@@ -19,6 +19,16 @@ const s3 = new AWS.S3({
 });
 
 router.post("/image-upload", upload, (req, res) => {
-  // params config
+  // use imported params config from utils
+  const params = paramsConfig(req.file);
   // S3 service call
+  s3.upload(params, (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send(err);
+    }
+    res.json(data);
+  });
 });
+
+module.exports = router;
