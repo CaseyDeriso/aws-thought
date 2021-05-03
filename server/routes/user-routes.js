@@ -34,11 +34,12 @@ router.get("/users/:username", (req, res) => {
       "#un": "username",
       "#ca": "createdAt",
       "#th": "thought",
+      "#im": "image",
     },
     ExpressionAttributeValues: {
       ":user": req.params.username,
     },
-    ProjectionExpression: "#th, #ca",
+    ProjectionExpression: "#th, #ca, #im",
     ScanIndexForward: false,
   };
   // Query the db with the params object
@@ -61,6 +62,7 @@ router.post("/users", (req, res) => {
       username: req.body.username,
       createdAt: Date.now(),
       thought: req.body.thought,
+      image: req.body.image 
     },
   };
   dynamodb.put(params, (err, data) => {
