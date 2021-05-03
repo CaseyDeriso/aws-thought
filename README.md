@@ -8,11 +8,15 @@
 AWS-Thought is a social media application where users can post thoughts to a DynamoDB non-relational database hosted on AWS. Users can also upload images with their thoughts which are uploaded to an S3 bucket on AWS. The application is hosted on an EC2 instance running unbuntu 20.04.2 LTS. 
 
 ## Table of Contents:
-* [installation](#installation)
-* [usage](#usage)
-* [screenshot](#screenshot)
-* [credits](#credits)
+* [Deployed](#Deployed)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Screenshot](#screenshot)
+* [Credits](#credits)
 
+## Deployed
+
+[Link to deployed application](http://3.21.185.123/)
 
 ## Installation 
 
